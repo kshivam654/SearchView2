@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -12,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
-        app:srcCompat="@mipmap/person_four" />
+        app:srcCompat="@mipmap/person_four"/>
 
     <TextView
         android:id="@+id/name_text"
@@ -23,8 +24,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@+id/profile_image"
-        android:fontFamily="@font/nunito_semibold"
-        android:text="Username"
+        android:text="Place Name"
         android:textColor="#555555"
         android:textSize="16sp" />
 
@@ -37,7 +37,6 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/profile_image"
-        android:fontFamily="@font/nunito_semibold"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
         android:textColor="#999999"
         android:textSize="14sp" />
