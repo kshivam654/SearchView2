@@ -1,7 +1,11 @@
 package app.sharma.searchview2;
 
 public class Places {
-    public String name, image, description;
+
+    public String name, link, description;
+
+    public Places() {
+    }
 
     public String getName() {
         return name;
@@ -12,11 +16,11 @@ public class Places {
     }
 
     public String getImage() {
-        return image;
+        return link;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImage(String link) {
+        this.link = link;
     }
 
     public String getDescription() {
@@ -27,12 +31,9 @@ public class Places {
         this.description = description;
     }
 
-    public Places() {
-    }
-
-    public Places(String name, String image, String description) {
+    public Places(String name, String link, String description) {
         this.name = name;
-        this.image = image;
+        this.link = link;
         this.description = description;
     }
 }
