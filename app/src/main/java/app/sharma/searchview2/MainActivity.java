@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                     String name = snapshot.child("name").getValue(String.class);
                     String link = snapshot.child("link").getValue(String.class);
                     String description = snapshot.child("description").getValue(String.class);
-                    if (name.contains(searchString)){
+                    if (name.startsWith(searchString)){
                         arrayList.add(new Places(name, link, description));
                         counter++;
                     }

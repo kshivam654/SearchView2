@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -26,12 +27,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     class SearchViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView profileImage;
+        TextView profileImage;
         TextView name, description;
 
         public SearchViewHolder(@NonNull View itemView) {
             super(itemView);
-            profileImage = (ImageView) itemView.findViewById(R.id.profile_image);
+            profileImage = (TextView) itemView.findViewById(R.id.profile_image);
             name = (TextView) itemView.findViewById(R.id.name_text);
             description = (TextView) itemView.findViewById(R.id.description_text);
         }
@@ -47,7 +48,15 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     @Override
     public void onBindViewHolder(@NonNull SearchViewHolder holder, int position) {
         holder.name.setText(arrayList.get(position).getName());
-        Glide.with(context).load(arrayList.get(position).getImage()).placeholder(R.mipmap.person_four).into(holder.profileImage);
+        holder.profileImage.setText(arrayList.get(position).getImage());
+        switch (arrayList.get(position).getImage().toString()){
+            case "HOTEL": holder.profileImage.setBackgroundColor(ContextCompat.getColor(context, R.color.pink));
+            break;
+            case "PLACE": holder.profileImage.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
+                break;
+            case "VILLA": holder.profileImage.setBackgroundColor(ContextCompat.getColor(context, R.color.yellow));
+                break;
+        }
         holder.description.setText(arrayList.get(position).getDescription());
 
     }
