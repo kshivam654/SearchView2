@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<Places> arrayList = new ArrayList<>();
 
+    TextView heading;
 
     SearchAdapter searchAdapter;
 
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         mSearchField = (EditText) findViewById(R.id.search_field);
         mSearchBtn = (ImageButton) findViewById(R.id.search_btn);
 
+        heading = (TextView) findViewById(R.id.heading_label);
+
         mRecyclerView = (RecyclerView) findViewById(R.id.result_list);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -68,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+                heading.setVisibility(View.INVISIBLE);
+                heading.setHeight(0);
             }
 
             @Override

@@ -7,14 +7,14 @@
     <TextView
         android:id="@+id/profile_image"
         android:layout_width="60dp"
-        android:padding="3dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
+        android:padding="3dp"
         android:text="Hotel"
         android:textAlignment="center"
         app:srcCompat="@mipmap/person_four" />

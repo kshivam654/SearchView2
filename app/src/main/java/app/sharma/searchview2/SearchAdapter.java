@@ -51,10 +51,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         holder.profileImage.setText(arrayList.get(position).getImage());
         switch (arrayList.get(position).getImage().toString()){
             case "HOTEL": holder.profileImage.setBackgroundColor(ContextCompat.getColor(context, R.color.pink));
+                holder.profileImage.setTextColor(ContextCompat.getColor(context, R.color.darkpink));
             break;
-            case "PLACE": holder.profileImage.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
+            case "PLACE": holder.profileImage.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary));
+                holder.profileImage.setTextColor(ContextCompat.getColor(context, R.color.colorPrimaryDark));
                 break;
             case "VILLA": holder.profileImage.setBackgroundColor(ContextCompat.getColor(context, R.color.yellow));
+                holder.profileImage.setTextColor(ContextCompat.getColor(context, R.color.darkyellow));
                 break;
         }
         holder.description.setText(arrayList.get(position).getDescription());
