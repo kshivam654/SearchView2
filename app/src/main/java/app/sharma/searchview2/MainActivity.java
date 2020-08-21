@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                searchAdapter = new SearchAdapter(MainActivity.this, arrayList);
+                searchAdapter = new SearchAdapter(MainActivity.this, arrayList, mSearchField);
                 mRecyclerView.setAdapter(searchAdapter);
 
             }
