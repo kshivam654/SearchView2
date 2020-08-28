@@ -27,9 +27,20 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
+        Intent intent = getIntent();
 
         city = (TextView) findViewById(R.id.city);
         changeCity = (Button) findViewById(R.id.changecity);
+
+        // Get the extras
+        Bundle extras = intent.getExtras();
+        if (extras != null) {
+            if (extras.containsKey("selected")) {
+                String cityName = extras.getString("selected", "KOlKATA");
+                city.setText(cityName);
+                // TODO: Do something with the value of isNew.
+            }
+        }
 
         try {
             if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
@@ -39,7 +50,8 @@ public class StartActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        getLocation();
+        if (city.getText().toString().equals("Dummy") )
+            getLocation();
 
         changeCity.setOnClickListener(new View.OnClickListener() {
             @Override

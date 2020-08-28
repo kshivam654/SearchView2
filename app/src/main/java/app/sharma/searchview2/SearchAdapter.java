@@ -49,7 +49,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                 @Override
                 public void onClick(View v) {
                     mSearchFeild.setText(name);
-                    Intent intent = new Intent(context, SecondActivity.class);
+                    Intent intent = new Intent(context, StartActivity.class);
                     intent.putExtra("selected", name);
                     context.startActivity(intent);
                 }
