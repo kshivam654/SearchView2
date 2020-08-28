@@ -50,6 +50,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
                 public void onClick(View v) {
                     mSearchFeild.setText(name);
                     Intent intent = new Intent(context, SecondActivity.class);
+                    intent.putExtra("selected", name);
                     context.startActivity(intent);
                 }
             });
